@@ -1,3 +1,4 @@
+import 'package:app/auth_screen.dart';
 import 'package:app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: themeData,
         debugShowCheckedModeBanner: false,
-        home: const Scaffold());
+        home: const AuthScreen());
   }
 }

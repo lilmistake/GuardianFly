@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 ThemeData themeData = ThemeData(
-    fontFamily: "Inter",
+    fontFamily: "Poppins",
     scaffoldBackgroundColor: Colors.white,
     colorScheme: const ColorScheme.light(primary: Colors.black),
     inputDecorationTheme: InputDecorationTheme(
