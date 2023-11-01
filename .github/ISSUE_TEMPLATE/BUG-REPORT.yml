@@ -1,0 +1,70 @@
+name: 🐛 Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 👟 Reproduction steps
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: 🤔 Expected Behaviour
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behaviour
+    attributes:
+      label: ❔ Actual Behaviour
+      description: A clear and concise description of what actually happens.
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 💻 Operating System
+      description: What OS is your device running on?
+      multiple: false
+      options:
+        - Android
+        - Windows
+        - Linux
+        - Web
+  - type: textarea
+    id: env
+    attributes:
+      label: 🧱 Your Environment
+      description: Describe your environment configuration here
+    validations:
+      required: true
+  - type: textarea
+    id: additionals
+    attributes:
+      label: 📝 Additional context
+      description: Add any other context about the problem here.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 👀 This issue hasn't been raised before or the solution didn't help you.
+      description: Have you Googled for a similar issue or checked our older issues for a similar bug?
+      options:
+        - label: I checked and didn't find similar issue
+          required: true
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: 🏢 Have you read the Code of Conduct?
+      options:
+        - label: I have read the [Code of Conduct](https://github.com/lilmistake/GuardianFly/blob/main/CODE_OF_CONDUCT.md)
+          required: true
