@@ -1,0 +1,47 @@
+{
+    "project_info": {
+      "project_number": "334101441598",
+      "project_id": "guardianflymanager",
+      "storage_bucket": "guardianflymanager.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:334101441598:android:b911f00105d781f0f8356f",
+          "android_client_info": {
+            "package_name": "com.example.app"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "334101441598-lmis16m06grjvq979j0c8ekcd3lil3v9.apps.googleusercontent.com",
+            "client_type": 1,
+            "android_info": {
+              "package_name": "com.example.app",
+              "certificate_hash": "6a2d108fa01aa3e26b135548ecdf2fceb4d01b21"
+            }
+          },
+          {
+            "client_id": "334101441598-levlh9icfh98ett4kcvnghmg7t129n03.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDgOql79K5HaqSB-pS7I4W_xdkEhK9W_58"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "334101441598-bt28ngpm610kfr0i6tvg2qoh4vll4423.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
