@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -14,16 +15,63 @@ class AuthScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [_logoWidget(), _continueWithGoogleButton()]),
+                      children: [
+                        _logoWidget(),
+                        const _ContinuteWithGoogleButton()
+                      ]),
                 ))),
       ),
     );
   }
 
-  handleButtonClick() {
+  Row _logoWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(
+          child: Image.network(
+            "https://i.imgur.com/0aIlCXu.png",
+            fit: BoxFit.contain,
+            alignment: Alignment.center,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ContinuteWithGoogleButton extends StatelessWidget {
+  const _ContinuteWithGoogleButton();
+
+  handleButtonClick(BuildContext context) async {
+    GoogleSignIn googleSignIn = GoogleSignIn();
+    googleSignIn.signOut();
+    GoogleSignInAccount? user = await googleSignIn.signIn();
+
+    if (user == null && context.mounted) {
+      return showErrorSnackBar(context);
+    }
   }
 
-  Container _continueWithGoogleButton() {
+  showErrorSnackBar(context) {
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        Icon(
+          Icons.error,
+          color: Colors.red,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Sign in failed, please try again later."),
+      ],
+    )));
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -40,7 +88,7 @@ class AuthScreen extends StatelessWidget {
           type: MaterialType.transparency,
           child: InkWell(
             borderRadius: BorderRadius.circular(10),
-            onTap: handleButtonClick,
+            onTap: () => handleButtonClick(context),
             child: Padding(
               padding: const EdgeInsets.all(15),
               child: Row(
@@ -61,20 +109,5 @@ class AuthScreen extends StatelessWidget {
             ),
           ),
         ));
-  }
-
-  Row _logoWidget() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Flexible(
-          child: Image.network(
-            "https://i.imgur.com/0aIlCXu.png",
-            fit: BoxFit.contain,
-            alignment: Alignment.center,
-          ),
-        ),
-      ],
-    );
   }
 }
